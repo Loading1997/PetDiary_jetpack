@@ -8,6 +8,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.lzh.libnetwork.ApiResponse;
 import com.lzh.libnetwork.GetRequest;
 import com.lzh.libnetwork.JsonCallback;
+import com.lzh.petdiary_jetpack.utils.MLog;
 import com.lzh.petdiary_jetpack.utils.NavGraphBuilder;
 import com.lzh.petdiary_jetpack.view.AppBottomBar;
 
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        MLog.i("我的未来不是梦");
         AppBottomBar navView = findViewById(R.id.nav_view);
 
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
