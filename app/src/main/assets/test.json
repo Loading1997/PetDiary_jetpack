@@ -1,0 +1,95 @@
+{
+  "status": 200,
+  "message": "成功",
+  "data": {
+    "data": [
+      {
+        "id": 428,
+        "itemId": 1578976510452,
+        "itemType": 2,
+        "createTime": 1578976510452,
+        "duration": 8.0,
+        "feeds_text": "2020他来了，他真菲尼迪搜集哦",
+        "authorId": 15875841111,
+        "activityIcon": null,
+        "activityText": "2021新年快乐",
+        "width": 320,
+        "height": 240,
+        "url": "https://www.runoob.com/try/demo_source/movie.mp4",
+        "cover": "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fdik.img.kttpdq.com%2Fpic%2F40%2F27687%2Fef3ca43d9b02924c_480x640.jpg&refer=http%3A%2F%2Fdik.img.kttpdq.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612410626&t=0838f682e0cd5b93c08899759f656a2a",
+        "author": {
+          "id": 1250,
+          "userId": 15875841111,
+          "name": "东方不败",
+          "avatar": "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fdik.img.kttpdq.com%2Fpic%2F40%2F27687%2Fef3ca43d9b02924c_480x640.jpg&refer=http%3A%2F%2Fdik.img.kttpdq.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612410626&t=0838f682e0cd5b93c08899759f656a2a",
+          "description": "这是东方不败的描述",
+          "likeCount": 0,
+          "topCommentCount": 0,
+          "followCount": 0,
+          "followerCount": 0,
+          "qqOpenId": "FE4DIEJFJDKSJFKLJDSKJFKLSD",
+          "expires_time": 1586696666666,
+          "score": 0,
+          "historyCount": 0,
+          "commentCount": 0,
+          "favoriteCount": 0,
+          "feedCount": 0,
+          "hasFollow": false
+        },
+        "topComment": {
+          "id": 1126,
+          "itemId": 1578976510452,
+          "commentId": 1579007787804000,
+          "userId": 15875841122,
+          "commentType": 1,
+          "createTime": 1579007787804,
+          "commentCount": 0,
+          "likeCount": 1001,
+          "commentText": "2021年新年快乐",
+          "imageUrl": null,
+          "videoUrl": null,
+          "width": 0,
+          "height": 0,
+          "hasLiked": false,
+          "author": {
+            "id": 0,
+            "userId": 15875841122,
+            "name": "张三",
+            "avatar": "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fdik.img.kttpdq.com%2Fpic%2F40%2F27687%2Fef3ca43d9b02924c_480x640.jpg&refer=http%3A%2F%2Fdik.img.kttpdq.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612410626&t=0838f682e0cd5b93c08899759f656a2a",
+            "description": "这是张三的描述",
+            "likeCount": 0,
+            "topCommentCount": 0,
+            "followCount": 0,
+            "followerCount": 0,
+            "qqOpenId": "FE4DIEJFJDKSJFKLJDSKJFKLBB",
+            "expires_time": 1586696666666,
+            "score": 0,
+            "historyCount": 0,
+            "commentCount": 0,
+            "favoriteCount": 0,
+            "feedCount": 0,
+            "hasFollow": false
+          },
+          "ugc": {
+            "likeCount": 0,
+            "shareCount": 0,
+            "commentCount": 0,
+            "hasFavorite": false,
+            "hasLiked": false,
+            "hasdiss": false,
+            "hasDissed": false
+          }
+        },
+        "ugc": {
+          "likeCount": 0,
+          "shareCount": 0,
+          "commentCount": 1,
+          "hasFavorite": false,
+          "hasLiked": false,
+          "hasdiss": false,
+          "hasDissed": false
+        }
+      }
+    ]
+  }
+}

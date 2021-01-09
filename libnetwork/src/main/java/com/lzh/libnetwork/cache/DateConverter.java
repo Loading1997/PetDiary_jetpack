@@ -1,0 +1,18 @@
+package com.lzh.libnetwork.cache;
+
+import androidx.room.TypeConverter;
+
+import java.util.Date;
+
+public class DateConverter {
+    @TypeConverter
+    public static Long date2Long(Date date){
+        if(date == null)
+            return 0L;
+        return date.getTime();
+    }
+    @TypeConverter
+    public static Date long2Date(Long date){
+        return new Date(date);
+    }
+}

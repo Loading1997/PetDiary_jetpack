@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="position">
+        <enum name="left_top" value="0"/>
+        <enum name="right_top" value="1"/>
+        <enum name="right_bottom" value="2"/>
+        <enum name="left_bottom" value="3"/>
+        <enum name="middle_bottom" value="4"/>
+    </attr>
+    <attr name="radius" format="dimension"/>
+    <declare-styleable name="ArcMenu">
+        <attr name="position"/>
+        <attr name="radius"/>
+    </declare-styleable>
+
+<!--    <attr name="borderRadius" format="dimension" />-->
+<!--    <attr name="type">-->
+<!--        <enum name="circle" value="0" />-->
+<!--        <enum name="round" value="1" />-->
+<!--    </attr>-->
+<!--    <attr name="src" format="reference"></attr>-->
+
+<!--    <declare-styleable name="CustomImageView">-->
+<!--        <attr name="borderRadius" />-->
+<!--        <attr name="type" />-->
+<!--        <attr name="src" />-->
+<!--    </declare-styleable>-->
+    <attr name="type">
+        <enum name="circle" value="0"/>
+        <enum name="round" value="1"/>
+    </attr>
+
+    <attr name="borderRadius" format="dimension"/>
+    <declare-styleable name="RoundImageView">
+    <attr name="type"/>
+    <attr name="borderRadius"/>
+    </declare-styleable>
+</resources>

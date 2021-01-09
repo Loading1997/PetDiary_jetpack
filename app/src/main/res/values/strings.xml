@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">宠物日记</string>
+    <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="lzh">lzh</string>
+    <string name="title_home">home</string>
+    <string name="title_dashboard">首页</string>
+    <string name="title_notifications">djdi</string>
+    <string name="queding">确定</string>
+</resources>

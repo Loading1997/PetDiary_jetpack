@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.button.MaterialButton android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:text="@string/queding"
+    android:textColor="@color/red"
+    android:textSize="@dimen/dp_20"
+    android:background="@color/white"
+    app:icon="@drawable/icon_error"
+    app:iconGravity="textStart"
+    app:iconSize="@dimen/dp_20"
+    app:iconTint="@color/red"
+    app:iconPadding="@dimen/dp_4"
+    app:cornerRadius="20dp"
+    xmlns:android="http://schemas.android.com/apk/res/android" />

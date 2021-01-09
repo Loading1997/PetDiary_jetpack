@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="user"
+            type="User" />
+        <import type="com.lzh.petdiary_jetpack.model.User"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <com.lzh.petdiary_jetpack.view.PDImageView
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            image_url="@{user.avatar}"
+            isCicle="true"
+            android:id="@+id/author_avatar"
+            tool:src="@color/green_head" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.name}"
+            tool:text="未定义"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:gravity="center"
+            android:textColor="@color/gray_8b"
+            android:textStyle="bold"/>
+
+
+    </LinearLayout>
+</layout>

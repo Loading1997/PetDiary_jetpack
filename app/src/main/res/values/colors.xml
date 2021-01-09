@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    <color name="colorPrimary">#008577</color>-->
+    <color name="colorPrimaryDark">@color/main_color</color>
+    <color name="colorAccent">#a4a1ed</color>
+    <color name="white">#ffffff</color>
+    <color name="white_8">#55ffffff</color>
+    <color name="white_alpha8">#ccffffff</color>
+    <color name="white_alpha2">#aaffffff</color>
+    <color name="green_chat">#BFDDBF</color>
+    <color name="green_head">#D4E4D4</color>
+    <color name="green_new">#8888FB88</color>
+
+    <color name="green">#0f0</color>
+    <color name="green_2">#396F39</color>
+    <color name="black">#FF000000</color>
+    <color name="black_8">#33000000</color>
+    <color name="black_c">#cc000000</color>
+    <color name="black_transation">#00000000</color>
+    <color name="black_s">#1D1C1C</color>
+    <color name="black_v">#414141</color>
+    <color name="black_main">#515151</color>
+
+    <color name="red">#e7542f</color>
+    <color name="red_b">#bbe7542f</color>
+
+    <color name="gray">#BCBCBC</color>
+    <color name="gray_e">#EEEEEE</color>
+    <color name="gray_f">#FBFBFB</color>
+    <color name="gray_8b">#8b8b8b</color>
+    <color name="white_bg">#F5F5F5</color>
+    <color name="blue">#088CEE</color>
+    <color name="blue_b">#bb088CEE</color>
+    <color name="red_new">#88FF5722</color>
+
+    <color name="green_3b">#3B7E3C</color>
+    <color name="max_blue">#081d4e</color>
+    <color name="min_blue">#22429e</color>
+<!--
+    <color name="main_color">#333150</color>
+-->
+    <color name="main_color">#413F63</color>
+
+    <color name="purple">#4D4AAA</color>
+    <color name="purple_b">#bb4D4AAA</color>
+    <color name="shit">#de8b12</color>
+    <color name="purple_btn">#A7A5DD</color>
+    <color name="shit_forground">#33de8b12</color>
+    <color name="purple_end">#a4a1ed</color>
+
+</resources>

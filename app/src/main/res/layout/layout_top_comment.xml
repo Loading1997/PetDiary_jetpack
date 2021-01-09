@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="comment"
+            type="com.lzh.petdiary_jetpack.model.Comment" />
+        <import type="android.text.TextUtils"
+            />
+        <import type="android.view.View"/>
+    </data>
+
+    <FrameLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginRight="@dimen/dp_10"
+            android:src="@drawable/bg_login"
+            android:layout_gravity="right|top" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_20"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <com.lzh.petdiary_jetpack.view.PDImageView
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    tool:src="@drawable/icon_fabu_home" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                style="@style/text_black__style_16dp"
+                android:visibility="@{TextUtils.isEmpty(comment.commentText)? View.GONE:View.VISIBLE}"
+                tool:text="@{comment.commentText}" />
+
+        </LinearLayout>
+    </FrameLayout>
+</layout>
