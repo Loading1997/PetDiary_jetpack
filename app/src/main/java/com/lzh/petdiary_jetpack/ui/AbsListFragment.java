@@ -59,7 +59,7 @@ public abstract class AbsListFragment<T, M extends AbsViewModel<T>> extends Frag
         DividerItemDecoration decoration = new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL);
         decoration.setDrawable(ContextCompat.getDrawable(getContext(), R.drawable.list_divider));
         recyclerView.addItemDecoration(decoration);
-        afterCreateView();
+
         return binding.getRoot();
 
     }
@@ -70,8 +70,9 @@ public abstract class AbsListFragment<T, M extends AbsViewModel<T>> extends Frag
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        //参数化类型
+        //参数化类型,
         ParameterizedType type = (ParameterizedType)getClass().getGenericSuperclass();
+        //得到泛型参数
         Type[] arguments = type.getActualTypeArguments();
         if(arguments.length >1){
             //从一个泛型类型中获取第二泛型参数的类型类。
@@ -90,6 +91,9 @@ public abstract class AbsListFragment<T, M extends AbsViewModel<T>> extends Frag
                      finishRefresh(hasData);
                  }
              });
+
+
+            afterCreateView();
         }
 
     }

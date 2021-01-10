@@ -5,6 +5,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
 import androidx.paging.DataSource;
 import androidx.paging.LivePagedListBuilder;
@@ -32,7 +33,12 @@ public abstract  class AbsViewModel<T> extends ViewModel {
                 .setBoundaryCallback(callback)
                 .build();
 
-
+/*        pageData.observeForever(new Observer<PagedList<T>>() {
+            @Override
+            public void onChanged(PagedList<T> pagedList) {
+                dapater.submitList();
+            }
+        });*/
     }
 
     public LiveData<PagedList<T>> getPageData(){

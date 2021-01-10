@@ -1,8 +1,10 @@
 package com.lzh.petdiary_jetpack.ui.home;
 
+import android.annotation.SuppressLint;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
+import androidx.arch.core.executor.ArchTaskExecutor;
 import androidx.lifecycle.MutableLiveData;
 import androidx.paging.DataSource;
 import androidx.paging.ItemKeyedDataSource;
@@ -16,18 +18,29 @@ import com.lzh.libnetwork.Request;
 import com.lzh.petdiary_jetpack.ui.AbsViewModel;
 import com.lzh.petdiary_jetpack.model.Feed;
 import com.lzh.petdiary_jetpack.ui.MutableDataSource;
+import com.lzh.petdiary_jetpack.utils.MLog;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class HomeViewModel extends AbsViewModel<Feed> {
 
     private volatile boolean witchCache = true;
+    private MutableLiveData<PagedList<Feed>> cacheLiveData = new MutableLiveData<>();
+    //做同步位的标记
+    private AtomicBoolean loadAfter = new AtomicBoolean(false);
+
 //    private MutableLiveData<PagedList<Feed>> cacheLiveData = new MutableDataSource()
     @Override
     public DataSource createDataSource() {
           return mDataSrouce;
+    }
+
+    public MutableLiveData<PagedList<Feed>> getCacheLiveData() {
+        return cacheLiveData;
     }
 
     ItemKeyedDataSource<Integer,Feed> mDataSrouce =  new ItemKeyedDataSource<Integer, Feed>() {
@@ -68,6 +81,9 @@ public class HomeViewModel extends AbsViewModel<Feed> {
                 .responseType(new TypeReference<ArrayList<Feed>>() {
                 }.getType());
 */
+        if(key > 0){
+            loadAfter.set(true);
+        }
         Request request = ApiService.get("/feeds/queryHotFeedsList")
                 .addParam("feedType", "")
 //                .addParam("userId", 0)
@@ -83,13 +99,12 @@ public class HomeViewModel extends AbsViewModel<Feed> {
                 public void onCacheSuccess(ApiResponse<List<Feed>> response) {
                     //Log.e("xxx", "onCacheSuccess: "+ response.body.size());
                     //高端玩法
-/*
                     Log.e("xxx", "onCacheSuccess: "+ response.body);
                     List<Feed> body = response.body;
                     MutableDataSource dataSource = new MutableDataSource<Integer,Feed>();
                     dataSource.data.addAll(response.body);
                     PagedList pageList = dataSource.buildNewPagedList(config);
-*/
+                    cacheLiveData.postValue(pageList);
 
                 }
             });
@@ -105,11 +120,28 @@ public class HomeViewModel extends AbsViewModel<Feed> {
             if(key > 0){
                 //通过liveData发送数据 告诉UI层 是否应该主动关闭上拉加载分页的动画
                 getBoundaryPageData().postValue(data.size() >0 );
+                loadAfter.set(false);
             }
 
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
 
+        MLog.e("loadData: key: " + key);
+
+    }
+
+    @SuppressLint("RestrictedApi")
+    public void loadAfter(int id, ItemKeyedDataSource.LoadCallback<Feed> callback) {
+        if (loadAfter.get()){
+            callback.onResult(Collections.emptyList());
+            return ;
+        }
+        ArchTaskExecutor.getIOThreadExecutor().execute(new Runnable() {
+            @Override
+            public void run() {
+                loadData(id, callback);
+            }
+        });
     }
 }
